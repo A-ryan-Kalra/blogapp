@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ql-editor {
+  font-size: 1.05rem;
+}
+.post-content h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.post-content p {
+  font-size: large;
+}
+
+.post-content ol li {
+  font-weight: bolder;
+}
+.post-content pre {
+  overflow-x: auto;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px 0px 10px;
+}
+
+.post-content ol li code {
+  color: #616564;
+}
+.post-content ul li::marker {
+  content: "•"; /* Use a custom bullet character */
+  font-size: 20px; /* Set the font size of the bullet */
+  color: black; /* Set the color of the bullet */
+}
