@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  # nginx:
+  #   ports:
+  #     - "80"
+  web:
+    build:
+      context: ./client
+      target: production
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - NODE_ENV=production
+
+  api:
+    build:
+      context: .
+      target: production
+    restart: unless-stopped
+    ports:
+      - "5000"

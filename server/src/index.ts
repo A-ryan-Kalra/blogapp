@@ -20,11 +20,10 @@ app.use(express.json());
 app.use(cookieParser());
 // app.use(
 //   cors({
-//     origin: true,
-//     credentials: true,
+//     credentials: false,
 //   })
 // );
-
+app.enable("trust proxy");
 app.listen(Port, () => {
   console.log("Server started successfully on Port: ", Port);
 });
@@ -34,10 +33,11 @@ app.use("/api/auth", authRouter);
 app.use("/api/post", postRoute);
 app.use("/api/comment", commentRoue);
 // console.log(path.join(dirname, "/client/dist"), "path");
-app.use(express.static(path.join(dirname, "/client/dist")));
+// app.use(express.static(path.join(dirname, "/client/dist")));  //needed for production
 
 app.get("*", (req: express.Request, res: express.Response) => {
-  res.sendFile(path.join(dirname, "client", "dist", "index.html"));
+  // res.sendFile(path.join(dirname, "client", "dist", "index.html"));  //needed for production
+  res.send({ Data: "Healthy" });
 });
 app.use(
   (

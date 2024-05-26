@@ -1,6 +1,9 @@
 import { Button } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
 
 function CallToAction() {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col sm:flex-row p-3 border border-teal-500 justify-center items-center rounded-tl-3xl rounded-br-3xl ">
       <div className=" flex-1 flex flex-col justify-center">
@@ -13,10 +16,9 @@ function CallToAction() {
         <Button
           gradientDuoTone={"purpleToPink"}
           className="rounded-tl-2xl rounded-bl-none text-center "
+          onClick={() => navigate("/search")}
         >
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            Learn more
-          </a>
+          Learn more
         </Button>
       </div>
       <div className="p-7 flex-1">
