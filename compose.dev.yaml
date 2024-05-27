@@ -17,7 +17,7 @@ services:
       - "/app/node_modules"
       - "./client:/app"
     environment:
-      - VITE_FIREBASE_API_KEY=AIzaSyAiR_jVXqdkHndgnIzw3COs01uWU4bFGUs
+      - VITE_FIREBASE_API_KEY=${YOUR_FIREBASE_API_KEY}
       - NODE_ENV=development
     develop:
       watch:
@@ -42,5 +42,5 @@ services:
       - ".:/app"
     environment:
       - PORT=5000
-      - DATABASE_URL=mongodb+srv://aryankalra:aryankalra@cluster0.w0jcxpf.mongodb.net/blog-app?retryWrites=true&w=majority&appName=Cluster0
-      - JWT_SECRET=dsadjkahakjhKJHkj2kjJjka212jkkjas
+      - DATABASE_URL=${YOUR_DATABASE_URL}
+      - JWT_SECRET=${YOUR_JWT_SECRET_KEY}
